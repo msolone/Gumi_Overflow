@@ -1,0 +1,14 @@
+/Users/Kemenyfy/sdg/cool-projects/Gumi_Overflow/gumi_server/bin/Debug/netcoreapp2.1/Gumi_Server.deps.json
+/Users/Kemenyfy/sdg/cool-projects/Gumi_Overflow/gumi_server/bin/Debug/netcoreapp2.1/Gumi_Server.runtimeconfig.json
+/Users/Kemenyfy/sdg/cool-projects/Gumi_Overflow/gumi_server/bin/Debug/netcoreapp2.1/Gumi_Server.runtimeconfig.dev.json
+/Users/Kemenyfy/sdg/cool-projects/Gumi_Overflow/gumi_server/bin/Debug/netcoreapp2.1/Gumi_Server.dll
+/Users/Kemenyfy/sdg/cool-projects/Gumi_Overflow/gumi_server/bin/Debug/netcoreapp2.1/Gumi_Server.pdb
+/Users/Kemenyfy/sdg/cool-projects/Gumi_Overflow/gumi_server/obj/Debug/netcoreapp2.1/Gumi_Server.csprojAssemblyReference.cache
+/Users/Kemenyfy/sdg/cool-projects/Gumi_Overflow/gumi_server/obj/Debug/netcoreapp2.1/Gumi_Server.csproj.CoreCompileInputs.cache
+/Users/Kemenyfy/sdg/cool-projects/Gumi_Overflow/gumi_server/obj/Debug/netcoreapp2.1/Gumi_Server.RazorAssemblyInfo.cache
+/Users/Kemenyfy/sdg/cool-projects/Gumi_Overflow/gumi_server/obj/Debug/netcoreapp2.1/Gumi_Server.RazorAssemblyInfo.cs
+/Users/Kemenyfy/sdg/cool-projects/Gumi_Overflow/gumi_server/obj/Debug/netcoreapp2.1/Gumi_Server.AssemblyInfoInputs.cache
+/Users/Kemenyfy/sdg/cool-projects/Gumi_Overflow/gumi_server/obj/Debug/netcoreapp2.1/Gumi_Server.AssemblyInfo.cs
+/Users/Kemenyfy/sdg/cool-projects/Gumi_Overflow/gumi_server/obj/Debug/netcoreapp2.1/Gumi_Server.RazorTargetAssemblyInfo.cache
+/Users/Kemenyfy/sdg/cool-projects/Gumi_Overflow/gumi_server/obj/Debug/netcoreapp2.1/Gumi_Server.dll
+/Users/Kemenyfy/sdg/cool-projects/Gumi_Overflow/gumi_server/obj/Debug/netcoreapp2.1/Gumi_Server.pdb

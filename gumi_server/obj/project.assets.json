@@ -11500,23 +11500,23 @@
     ]
   },
   "packageFolders": {
-    "/Users/michaelsolone/.nuget/packages/": {},
+    "/Users/Kemenyfy/.nuget/packages/": {},
     "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/michaelsolone/sdg/dot_net/week-10/Gumi_Overflow/Gumi_Server/Gumi_Server.csproj",
+      "projectUniqueName": "/Users/Kemenyfy/sdg/cool-projects/Gumi_Overflow/gumi_server/Gumi_Server.csproj",
       "projectName": "Gumi_Server",
-      "projectPath": "/Users/michaelsolone/sdg/dot_net/week-10/Gumi_Overflow/Gumi_Server/Gumi_Server.csproj",
-      "packagesPath": "/Users/michaelsolone/.nuget/packages/",
-      "outputPath": "/Users/michaelsolone/sdg/dot_net/week-10/Gumi_Overflow/Gumi_Server/obj/",
+      "projectPath": "/Users/Kemenyfy/sdg/cool-projects/Gumi_Overflow/gumi_server/Gumi_Server.csproj",
+      "packagesPath": "/Users/Kemenyfy/.nuget/packages/",
+      "outputPath": "/Users/Kemenyfy/sdg/cool-projects/Gumi_Overflow/gumi_server/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/Users/michaelsolone/.nuget/NuGet/NuGet.Config"
+        "/Users/Kemenyfy/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.1"
