@@ -3,7 +3,7 @@ using System;
 namespace Gumi_Server
 
 {
-    public class Questions 
+    public class Question 
     {
         public int Id { get; set; }
         public string Title { get; set; }
