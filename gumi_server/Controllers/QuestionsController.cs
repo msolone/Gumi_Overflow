@@ -20,7 +20,7 @@ namespace Gumi_Server
         }
 
         [HttpGet]
-        public IOrderedQueryable<QuestionsController> Get()
+        public IEnumerable<Question> Get()
         {
             //Query Database Table Questions --> Return Ordered by Title and then by Date
             var questions = this.db.Questions.OrderBy(o => o.Title.ToLower()).ThenBy(t => t.Date);
