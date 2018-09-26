@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-// using Gumi_Server.DataModel;
 
 namespace Gumi_Server
 {
@@ -12,10 +11,10 @@ namespace Gumi_Server
     public class QuestionsController : ControllerBase
     {
 
-        private gumioverflow_databaseContext db { get; set; }
+        private gumioverflow_datebaseContext db { get; set; }
 
-        //Making Db Variable
-        public LocationsController(gumioverflow_databaseContext _db)
+        //Making db Global
+        public QuestionsController(gumioverflow_datebaseContext _db)
         { 
             this.db = _db;
         }
