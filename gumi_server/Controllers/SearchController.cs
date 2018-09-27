@@ -21,21 +21,51 @@ namespace Gumi_Server.Controllers
         { 
             this.db = _db;
         }
-        //Searches the Questions Table for what ever is typed after api/search/...
          [HttpGet]
-        public IEnumerable<SearchResults> Get([FromQuery]string q)
+         // [FromQuery] string q = the letters you put after api/search/...
+        public IEnumerable<SearchResults> Get([FromQuery]string q) 
         {
+        
+        // Searches the Questions Table for what ever is typed after api/search/...
             var questionsResults = this.db
-                .Questions
-                    .Where(w => w.Title.Contains(q) || w.Content.Contains(q))
+                // Accessing Questions Table
+                .Questions 
+                    // Filtering the data to only include Titles and Content with the q value
+                    .Where(w => w.Title.ToLower().Contains(q) || w.Content.ToLower().Contains(q))
+                        // Orders the remaining array by the date 
                         .OrderBy(o => o.Date)
+                            // Truncates the list to the first 5
                             .Take(5)
+                                // Creates a new array to fit the SearchResults View Model
                                 .Select(s => new SearchResults {
-                                    Text = s.Title,
                                     Id = s.Id,
+                                    Text = s.Title,
                                     Type = "question"
                                 });
-            return questionsResults;
+        
+        // Searches the Answers Table for what ever is typed after api/search/...
+            var answersResults = this.db 
+                // Accessing Answers Table  
+                .Answers
+                    // Filtering data to only include Content with the q value
+                    .Where(w => w.Content.ToLower().Contains(q))
+                        // Orders the remaining array by the date 
+                        .OrderBy(o => o.Date)
+                            // Truncates the list to the first 5
+                            .Take(5)
+                                // Creates a new array to fit the SearchResults View Model
+                                .Select(s => new SearchResults {
+                                    Id = s.Id,
+                                    Text = s.Content,
+                                    Type = "answer"
+                                });
+             // Create empty list and add search results from both searches to it
+            var finalResults = new List<SearchResults>();
+            finalResults.AddRange(questionsResults);
+            finalResults.AddRange(answersResults);
+
+             return finalResults.OrderBy(o => o.Text);
+        
         }
     }
 
