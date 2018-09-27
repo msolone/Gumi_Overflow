@@ -7,7 +7,7 @@ class Questions extends Component {
         <section>
         <div className="topBody">
           <p className="allQuestions">All Questions</p>
-          <button className="askQuestionButton">Ask Question</button>
+          <Link to="./AskQuestion"><button className="askQuestionButton">Ask Question</button></Link>
         </div>
         <div className="questions">
           <div className="votesAnswersBox">

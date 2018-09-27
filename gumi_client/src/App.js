@@ -5,6 +5,7 @@ import "./App.css";
 import Nav from "./Components/Nav";
 import Questions from "./Components/Questions";
 import Question from "./Components/Question";
+import AskQuestion from "./Components/AskQuestion";
 
 class App extends Component {
   render() {
@@ -15,6 +16,7 @@ class App extends Component {
           <Switch>
             <Route path="/" exact component={Questions} />
             <Route path="/Question" exact component={Question} />
+            <Route path="/AskQuestion" exact component={AskQuestion} />
           </Switch>
         </div>
       </Router>
