@@ -28,5 +28,6 @@ namespace Gumi_Server
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {}
         public DbSet<Question> Questions {get; set;}
+        public DbSet<Answer> Answers {get; set;}
     }
 }

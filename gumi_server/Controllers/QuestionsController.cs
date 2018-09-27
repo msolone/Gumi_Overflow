@@ -22,9 +22,9 @@ namespace Gumi_Server
         [HttpGet]
         public IEnumerable<Question> Get()
         {
-            //Query Database Table Questions --> Return Ordered by Title and then by Date
+            // Query Database Table Questions --> Return Ordered by Title and then by Date
             var questions = this.db.Questions.OrderBy(o => o.Title.ToLower()).ThenBy(t => t.Date);
-            return questions;
+            return questions;  
         }
 
     } //END public class LocationsController : ControllerBase
