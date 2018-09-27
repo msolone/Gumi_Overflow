@@ -11,6 +11,6 @@ namespace Gumi_Server.Models
         public DateTime Date { get; set; } = DateTime.Now;
         public int UpVotes { get; set; } = 0;
         public int DownVotes { get; set; } = 0;
-        public string Postedby { get; set; }
+        public string Postedby { get; set; } 
     }
 }
