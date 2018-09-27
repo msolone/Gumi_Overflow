@@ -27,5 +27,13 @@ namespace Gumi_Server
             return questions;  
         }
 
+        [HttpPost]
+        public Question Post([FromBody] Question q)
+        {
+            this.db.Add(q);
+            this.db.SaveChanges();
+            return q;
+        }
+
     } //END public class LocationsController : ControllerBase
 } //END namespace PlacesTravelled.Controllers

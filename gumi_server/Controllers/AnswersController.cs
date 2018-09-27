@@ -23,7 +23,6 @@ namespace Gumi_Server
         public IEnumerable<Answer> Get()
         {
             return this.db.Answers;
-  
         }
 
         // Post an Answer to the Database
