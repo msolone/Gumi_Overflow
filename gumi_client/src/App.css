@@ -23,20 +23,21 @@ body {
 header {
   display: flex;
   justify-content: space-between;
-  padding: 1em;
+  padding: .3em 5em;
   background-color: #F9F9FA;
   border-top: 2px solid orange;
   border-bottom: 1px solid black;
+  align-items: center;
 }
 
 header input {
-  width: 40%;
+  width: 60%;
 }
 
 .search {
   display: flex;
   justify-content: space-between;
-  width: 50%;
+  width: 40%;
 }
 
 .topBody {

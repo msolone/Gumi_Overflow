@@ -7,17 +7,17 @@ class App extends Component {
       <div className="App">
         <header>
           <div className="search">
-            <img src="../Assets/StackLogo.png" />
+            <img src="../Assets/StackOverflow_Logo2.png" alt="Stack Overflow" />
             <input type="text" placeholder="Search..." />
           </div>
           <h2>Menu</h2>
         </header>
-        <body>
+        <div>
           <div className="topBody">
             <p className="allQuestions">All Questions</p>
             <button className="askQuestionButton">Ask Question</button>
           </div>
-        </body>
+        </div>
       </div>
     );
   }
