@@ -12,12 +12,60 @@ class App extends Component {
           </div>
           <h2>Menu</h2>
         </header>
-        <div>
+        <section>
           <div className="topBody">
             <p className="allQuestions">All Questions</p>
             <button className="askQuestionButton">Ask Question</button>
           </div>
-        </div>
+          <div className="questions">
+            <div className="votesAnswersBox">
+              <div className="votes">
+                <p>0</p>
+                <p>Votes</p>
+              </div>
+              <div className="answers">
+                <p>0</p>
+                <p>Answers</p>
+              </div>
+            </div>
+            <div className="questionBox">
+              <p className="question">Sample Question is?</p>
+              <p className="dateTime">Asked Now</p>
+            </div>
+          </div>
+          <div className="questions">
+            <div className="votesAnswersBox">
+              <div className="votes">
+                <p>0</p>
+                <p>Votes</p>
+              </div>
+              <div className="answers">
+                <p>0</p>
+                <p>Answers</p>
+              </div>
+            </div>
+            <div className="questionBox">
+              <p className="question">Sample Looooooonger Question is?Sample Looooooonger Question is?Sample Looooooonger Question is?Sample Looooooonger Question is?Sample Looooooonger Question is?</p>
+              <p className="dateTime">Asked Now</p>
+            </div>
+          </div>
+          <div className="questions">
+            <div className="votesAnswersBox">
+              <div className="votes">
+                <p>0</p>
+                <p>Votes</p>
+              </div>
+              <div className="answers">
+                <p>0</p>
+                <p>Answers</p>
+              </div>
+            </div>
+            <div className="questionBox">
+              <p className="question">Sample Question is?</p>
+              <p className="dateTime">Asked Now</p>
+            </div>
+          </div>
+        </section>
       </div>
     );
   }

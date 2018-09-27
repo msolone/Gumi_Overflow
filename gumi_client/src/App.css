@@ -43,7 +43,7 @@ header input {
 .topBody {
   display: flex;
   justify-content: space-around;
-  margin-top: 1em;
+  margin: 1em 0em 2em 0em;
 }
 
 .allQuestions {
@@ -57,4 +57,44 @@ header input {
   border-radius: 5px;
 }
 
+.questions {
+  display: flex;
+  margin: 0em 5em 0em 5em;
+  background-color: #FFFBE8;
+  color: grey;
+}
 
+.votes,
+.answers,
+.questionBox {
+  display: flex;
+  flex-direction: column;
+  padding: .4em;
+}
+
+.votesAnswersBox {
+  display: flex;
+  border: 1px solid lightgray;
+  text-align: center;
+}
+
+.questionBox {
+  width: 90%;
+  border: 1px solid lightgray;
+}
+
+.questions p {
+  padding: .2em;
+}
+
+.dateTime {
+  text-align: right;
+}
+
+.question {
+  color: darkblue;
+}
+
+.question:hover {
+  color: lightskyblue;
+}
