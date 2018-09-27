@@ -47,7 +47,7 @@ header input {
 }
 
 .allQuestions {
-  font-size: 2em;
+  font-size: 1.8em;
   margin-left: 10%;
 }
 
@@ -81,6 +81,10 @@ header input {
   text-align: center;
 }
 
+.votesAndAnswers {
+  font-size: .7em;
+} 
+
 .questionBox {
   width: 90%;
   border: 1px solid lightgray;
@@ -98,6 +102,6 @@ header input {
   color: darkblue;
 }
 
-.question:hover {
+.questionBox p:hover {
   color: lightskyblue;
 }

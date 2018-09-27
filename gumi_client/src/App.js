@@ -21,11 +21,11 @@ class App extends Component {
             <div className="votesAnswersBox">
               <div className="votes">
                 <p>0</p>
-                <p>Votes</p>
+                <p className="votesAndAnswers">Votes</p>
               </div>
               <div className="answers">
                 <p>0</p>
-                <p>Answers</p>
+                <p className="votesAndAnswers">Answers</p>
               </div>
             </div>
             <div className="questionBox">
@@ -37,15 +37,19 @@ class App extends Component {
             <div className="votesAnswersBox">
               <div className="votes">
                 <p>0</p>
-                <p>Votes</p>
+                <p className="votesAndAnswers">Votes</p>
               </div>
               <div className="answers">
                 <p>0</p>
-                <p>Answers</p>
+                <p className="votesAndAnswers">Answers</p>
               </div>
             </div>
             <div className="questionBox">
-              <p className="question">Sample Looooooonger Question is?Sample Looooooonger Question is?Sample Looooooonger Question is?Sample Looooooonger Question is?Sample Looooooonger Question is?</p>
+              <p className="question">
+                Sample Looooooonger Question is?Sample Looooooonger Question
+                is?Sample Looooooonger Question is?Sample Looooooonger Question
+                is?Sample Looooooonger Question is?
+              </p>
               <p className="dateTime">Asked Now</p>
             </div>
           </div>
@@ -53,11 +57,11 @@ class App extends Component {
             <div className="votesAnswersBox">
               <div className="votes">
                 <p>0</p>
-                <p>Votes</p>
+                <p className="votesAndAnswers">Votes</p>
               </div>
               <div className="answers">
                 <p>0</p>
-                <p>Answers</p>
+                <p className="votesAndAnswers">Answers</p>
               </div>
             </div>
             <div className="questionBox">
