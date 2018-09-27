@@ -3,15 +3,17 @@ using System;
 using Gumi_Server;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace Gumi_Server.Migrations
 {
     [DbContext(typeof(gumioverflow_datebaseContext))]
-    partial class gumioverflow_datebaseContextModelSnapshot : ModelSnapshot
+    [Migration("20180927172544_UpdatedModel")]
+    partial class UpdatedModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

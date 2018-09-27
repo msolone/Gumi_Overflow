@@ -45,7 +45,7 @@ namespace Gumi_Server.Controllers
             // Find the Answer in the Database with matching id
             var answer = this.db.Answers.FirstOrDefault(a => a.Id == id);
             // Change Content
-            answer.Content = "New Content";
+            answer.Content = "Practice Patch of Content";
             // Change Date to Now
             answer.Date = DateTime.Now;
             // Saves Changes to DB
