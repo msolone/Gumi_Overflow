@@ -32,7 +32,7 @@ class Questions extends Component {
             <div className="questions" key={i}>
               <div className="votesAnswersBox">
                 <div className="votes">
-                  <p>{question.upVotes}</p>
+                  <p>{question.upVotes - question.downVotes}</p>
                   <p className="votesAndAnswers">Votes</p>
                 </div>
                 <div className="answers">

@@ -25,7 +25,7 @@ namespace Gumi_Server.Controllers
         public IEnumerable<Question> Get()
         {
             // Query Database Table Questions --> Return Ordered by Title and then by Date
-            var questions = this.db.Questions.OrderBy(o => o.Title.ToLower()).ThenBy(t => t.Date);
+            var questions = this.db.Questions.OrderByDescending(t => t.Date).ThenBy(o => o.Title.ToLower());
             return questions;  
 
         }//END HttpGet
