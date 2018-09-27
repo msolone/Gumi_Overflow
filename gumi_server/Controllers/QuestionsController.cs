@@ -2,9 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Gumi_Server.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Gumi_Server
+
+namespace Gumi_Server.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -18,15 +20,14 @@ namespace Gumi_Server
         { 
             this.db = _db;
         }
-
         [HttpGet]
         public IEnumerable<Question> Get()
         {
+            return this.db.Questions;
             // Query Database Table Questions --> Return Ordered by Title and then by Date
-            var questions = this.db.Questions.OrderBy(o => o.Title.ToLower()).ThenBy(t => t.Date);
-            return questions;  
+            // var questions = this.db.Questions.OrderBy(o => o.Title.ToLower()).ThenBy(t => t.Date);
+            // return questions;  
         }
-
         [HttpPost]
         public Question Post([FromBody] Question q)
         {

@@ -1,6 +1,6 @@
 using System;
 
-namespace Gumi_Server
+namespace Gumi_Server.Models
 
 {
     public class Question 

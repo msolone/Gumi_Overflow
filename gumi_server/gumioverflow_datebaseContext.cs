@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Gumi_Server;
+using Gumi_Server.Models;
 
 namespace Gumi_Server
 {

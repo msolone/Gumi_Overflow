@@ -2,9 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Gumi_Server.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Gumi_Server
+namespace Gumi_Server.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
