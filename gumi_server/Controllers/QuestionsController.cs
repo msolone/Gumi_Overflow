@@ -20,6 +20,7 @@ namespace Gumi_Server.Controllers
         { 
             this.db = _db;
         }
+
         [HttpGet]
         public IEnumerable<Question> Get()
         {
@@ -27,14 +28,17 @@ namespace Gumi_Server.Controllers
             // Query Database Table Questions --> Return Ordered by Title and then by Date
             // var questions = this.db.Questions.OrderBy(o => o.Title.ToLower()).ThenBy(t => t.Date);
             // return questions;  
-        }
+
+        }//END HttpGet
+
         [HttpPost]
         public Question Post([FromBody] Question q)
         {
             this.db.Add(q);
             this.db.SaveChanges();
             return q;
-        }
+
+        }//ENDHttpPost
 
     } //END public class LocationsController : ControllerBase
 } //END namespace PlacesTravelled.Controllers

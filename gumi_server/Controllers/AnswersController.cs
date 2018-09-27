@@ -16,15 +16,17 @@ namespace Gumi_Server.Controllers
 
         //Making db Global
         public AnswersController(gumioverflow_datebaseContext _db)
-        { 
+        {
             this.db = _db;
         }
+
         // Gathers all Answers into an Array
         [HttpGet]
         public IEnumerable<Answer> Get()
         {
             return this.db.Answers;
-        }
+
+        }//END HttpGet
 
         // Post an Answer to the Database
         [HttpPost]
@@ -33,7 +35,8 @@ namespace Gumi_Server.Controllers
             this.db.Add(a);
             this.db.SaveChanges();
             return a;
-        }
 
-    } 
-} 
+        }//END HttpPost
+
+    } //END public class LocationsController : ControllerBase
+} //END namespace PlacesTravelled.Controllers
