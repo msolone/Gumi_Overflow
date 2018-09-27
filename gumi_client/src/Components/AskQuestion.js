@@ -67,7 +67,6 @@ class AskQuestion extends Component {
           </button>
         </form>
         <section className="how_to_format_section">
-<<<<<<< HEAD
             <div className="format_title">How to Format</div>
             <ul>
                 <li>put returns between paragraphs</li>
@@ -79,22 +78,6 @@ class AskQuestion extends Component {
                 <li>to make links</li>
                 <li>basic HTML also allowed</li>
             </ul>
-=======
-          <div className="format_title">How to Format</div>
-          <ul>
-            <li>put returns between paragraphs</li>
-            <li>or linebreak add 2 spaces at end</li>
-            <li>
-              <span className="italic">_italic_</span> or{" "}
-              <span className="bold">**bold**</span>
-            </li>
-            <li>indent code by 4 spaces</li>
-            <li>backtick escapes `like _so_`</li>
-            <li> quote by placing > at start of line</li>
-            <li>to make links</li>
-            <li>basic HTML also allowed</li>
-          </ul>
->>>>>>> 390d9122b35d3a7f4a1995ef5bded7c0af0439d8
         </section>
       </section>
     );
