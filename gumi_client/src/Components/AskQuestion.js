@@ -32,7 +32,6 @@ class AskQuestion extends Component {
                 <li>to make links</li>
                 <li>basic HTML also allowed</li>
             </ul>
-
         </section>
       </section>
     );

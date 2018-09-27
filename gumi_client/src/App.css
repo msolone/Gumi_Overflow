@@ -106,3 +106,19 @@ header input {
 .questionBox p:hover {
   color: lightskyblue;
 }
+
+.oneQuestion {
+  border-bottom: 1px solid grey;
+}
+
+.answeredQuestionBox {
+  display: flex;
+  border: 1px solid black;
+  padding: 1em;
+  margin: 0em 1em 0em 1em;
+}
+
+.votesUpDown p {
+  padding: .5em;
+  text-align: center;
+}
