@@ -55,24 +55,6 @@ namespace Gumi_Server.Controllers
 
         } // END HttpPatch
 
-        // Update an Answer Content in the Database
-        [HttpPatch("{id}/UpVotes")]
-        public Answer Patch(int id)
-        {
-            // Find the Answer in the Database with matching id
-            var answer = this.db.Answers.FirstOrDefault(a => a.Id == id);
-            // Change Content
-            answer.UpVotes++;
-            // Change Date to Now
-            answer.Date = DateTime.Now;
-            // Saves Changes to DB
-            this.db.SaveChanges();
-            // Returns the New Answer
-            return answer;
-
-        } // END HttpPatch
-
-       
 
     } //END public class LocationsController : ControllerBase
 } //END namespace PlacesTravelled.Controllers
