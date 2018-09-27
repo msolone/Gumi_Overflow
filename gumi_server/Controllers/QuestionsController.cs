@@ -24,17 +24,16 @@ namespace Gumi_Server.Controllers
         [HttpGet]
         public IEnumerable<Question> Get()
         {
-            return this.db.Questions;
             // Query Database Table Questions --> Return Ordered by Title and then by Date
-            // var questions = this.db.Questions.OrderBy(o => o.Title.ToLower()).ThenBy(t => t.Date);
-            // return questions;  
+            var questions = this.db.Questions.OrderBy(o => o.Title.ToLower()).ThenBy(t => t.Date);
+            return questions;  
 
         }//END HttpGet
 
         [HttpPost]
         public Question Post([FromBody] Question q)
         {
-            this.db.Add(q);
+            this.db.Questions.Add(q);
             this.db.SaveChanges();
             return q;
 
