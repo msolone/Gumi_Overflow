@@ -1,0 +1,95 @@
+* {
+ padding: 0;
+ margin: 0;
+}
+.ask_question_page {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: initial;
+    margin-top: 2em;
+}
+.ask_question_form {
+    height: 90%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: space-around;
+  
+}
+
+.ask_question_call_to_action {
+    font-size: 2em;
+}
+
+.ask_question_title_section {
+    width: 100%
+}
+
+.ask_question_title {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.ask_question_title_input {
+    height: 2.5em;
+    width: 85%
+}
+
+.ask_question_body_section {
+    width: 100%;
+}
+
+.ask_question_body {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.ask_question_body_input {
+    height: 20em;
+    width: 85%;
+}
+
+.ask_question_form_submit {
+    height: 4em;
+    width: 20%;
+    background: #3E94F7;
+    color: white;
+    font-weight: bold;
+    padding: 1em;
+    border-radius: 5%;
+}
+
+.how_to_format_section {
+    background: #FFFBE8;
+    height: 70%;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+.how_to_format_section ul {
+    padding-left: 3em;
+}
+
+.format_title {
+    font-size: 1.5em;
+    padding: 1em;
+    background:#F6F1D8; 
+}
+
+.how_to_format_section li {
+    padding: 1em;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.bold {
+    font-weight: bold;
+}
+
