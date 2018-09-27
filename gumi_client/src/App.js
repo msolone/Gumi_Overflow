@@ -6,12 +6,18 @@ class App extends Component {
     return (
       <div className="App">
         <header>
-          <div class="search">
-            <h2>GumiOverflow</h2>
+          <div className="search">
+            <img src="../Assets/StackLogo.png" />
             <input type="text" placeholder="Search..." />
           </div>
           <h2>Menu</h2>
         </header>
+        <body>
+          <div className="topBody">
+            <p className="allQuestions">All Questions</p>
+            <button className="askQuestionButton">Ask Question</button>
+          </div>
+        </body>
       </div>
     );
   }
