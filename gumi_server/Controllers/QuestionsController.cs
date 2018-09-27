@@ -31,11 +31,11 @@ namespace Gumi_Server.Controllers
         }//END HttpGet
 
         [HttpPost]
-        public Question Post([FromBody] Question q)
+        public Question Post([FromBody] Question Title)
         {
-            this.db.Questions.Add(q);
+            this.db.Questions.Add(Title);
             this.db.SaveChanges();
-            return q;
+            return Title;
 
         }//ENDHttpPost
 
