@@ -25,64 +25,30 @@ class Questions extends Component {
       <section>
         <div className="topBody">
           <p className="allQuestions">All Questions</p>
-          <Link to="./AskQuestion" className="askQuestionButton">
-            Ask Question
-          </Link>
+          <Link to="./AskQuestion" className="askQuestionButton">Ask Question</Link>
         </div>
-        <div className="questions">
-          <div className="votesAnswersBox">
-            <div className="votes">
-              <p>0</p>
-              <p className="votesAndAnswers">Votes</p>
+        {this.state.questions.map((question, i) => {
+          return (
+            <div className="questions" key={i}>
+              <div className="votesAnswersBox">
+                <div className="votes">
+                  <p>{question.upVotes}</p>
+                  <p className="votesAndAnswers">Votes</p>
+                </div>
+                <div className="answers">
+                  <p>0</p>
+                  <p className="votesAndAnswers">Answers</p>
+                </div>
+              </div>
+              <div className="questionBox">
+                <Link to="./Question">
+                  <p className="question">{question.title}</p>
+                </Link>
+                <p className="dateTime">Asked {question.date}</p>
+              </div>
             </div>
-            <div className="answers">
-              <p>0</p>
-              <p className="votesAndAnswers">Answers</p>
-            </div>
-          </div>
-          <div className="questionBox">
-            <Link to="./Question">
-              <p className="question">Sample Question is?</p>
-            </Link>
-            <p className="dateTime">Asked Now</p>
-          </div>
-        </div>
-        <div className="questions">
-          <div className="votesAnswersBox">
-            <div className="votes">
-              <p>0</p>
-              <p className="votesAndAnswers">Votes</p>
-            </div>
-            <div className="answers">
-              <p>0</p>
-              <p className="votesAndAnswers">Answers</p>
-            </div>
-          </div>
-          <div className="questionBox">
-            <p className="question">
-              Sample Looooooonger Question is?Sample Looooooonger Question
-              is?Sample Looooooonger Question is?Sample Looooooonger Question
-              is?Sample Looooooonger Question is?
-            </p>
-            <p className="dateTime">Asked Now</p>
-          </div>
-        </div>
-        <div className="questions">
-          <div className="votesAnswersBox">
-            <div className="votes">
-              <p>0</p>
-              <p className="votesAndAnswers">Votes</p>
-            </div>
-            <div className="answers">
-              <p>0</p>
-              <p className="votesAndAnswers">Answers</p>
-            </div>
-          </div>
-          <div className="questionBox">
-            <p className="question">Sample Question is?</p>
-            <p className="dateTime">Asked Now</p>
-          </div>
-        </div>
+          );
+        })}
       </section>
     );
   }
