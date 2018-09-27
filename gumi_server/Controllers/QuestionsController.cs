@@ -39,5 +39,22 @@ namespace Gumi_Server.Controllers
 
         }//ENDHttpPost
 
+        // Update an Question Content in the Database
+        [HttpPatch("{id}/Content")]
+        public Question Patch([FromBody] Question _question, int id)
+        {
+            // Find the Question in the Database with matching id
+            var question = this.db.Questions.FirstOrDefault(a => a.Id == id);
+            // Change Content
+            question.Content = _question.Content;
+            // Change Date to Now
+            question.Date = DateTime.Now;
+            // Saves Changes to DB
+            this.db.SaveChanges();
+            // Returns the New Question
+            return question;
+
+        } // END HttpPatch
+
     } //END public class LocationsController : ControllerBase
 } //END namespace PlacesTravelled.Controllers
