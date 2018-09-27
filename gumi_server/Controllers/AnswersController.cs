@@ -38,5 +38,22 @@ namespace Gumi_Server.Controllers
 
         }//END HttpPost
 
+        // Update an Answer already in the Database
+        [HttpPatch("{id}")]
+        public Answer Patch(int id)
+        {
+            // Find the Answer in the Database with matching id
+            var answer = this.db.Answers.FirstOrDefault(a => a.Id == id);
+            // Change Content
+            answer.Content = "New Content";
+            // Change Date to Now
+            answer.Date = DateTime.Now;
+            // Saves Changes to DB
+            this.db.SaveChanges();
+            // Returns the New Answer
+            return answer;
+
+        } // END HttpPatch
+
     } //END public class LocationsController : ControllerBase
 } //END namespace PlacesTravelled.Controllers
