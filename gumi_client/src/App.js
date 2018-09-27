@@ -7,17 +7,69 @@ class App extends Component {
       <div className="App">
         <header>
           <div className="search">
-            <img src="../Assets/StackLogo.png" />
+            <img src="../Assets/StackOverflow_Logo2.png" alt="Stack Overflow" />
             <input type="text" placeholder="Search..." />
           </div>
           <h2>Menu</h2>
         </header>
-        <body>
+        <section>
           <div className="topBody">
             <p className="allQuestions">All Questions</p>
             <button className="askQuestionButton">Ask Question</button>
           </div>
-        </body>
+          <div className="questions">
+            <div className="votesAnswersBox">
+              <div className="votes">
+                <p>0</p>
+                <p className="votesAndAnswers">Votes</p>
+              </div>
+              <div className="answers">
+                <p>0</p>
+                <p className="votesAndAnswers">Answers</p>
+              </div>
+            </div>
+            <div className="questionBox">
+              <p className="question">Sample Question is?</p>
+              <p className="dateTime">Asked Now</p>
+            </div>
+          </div>
+          <div className="questions">
+            <div className="votesAnswersBox">
+              <div className="votes">
+                <p>0</p>
+                <p className="votesAndAnswers">Votes</p>
+              </div>
+              <div className="answers">
+                <p>0</p>
+                <p className="votesAndAnswers">Answers</p>
+              </div>
+            </div>
+            <div className="questionBox">
+              <p className="question">
+                Sample Looooooonger Question is?Sample Looooooonger Question
+                is?Sample Looooooonger Question is?Sample Looooooonger Question
+                is?Sample Looooooonger Question is?
+              </p>
+              <p className="dateTime">Asked Now</p>
+            </div>
+          </div>
+          <div className="questions">
+            <div className="votesAnswersBox">
+              <div className="votes">
+                <p>0</p>
+                <p className="votesAndAnswers">Votes</p>
+              </div>
+              <div className="answers">
+                <p>0</p>
+                <p className="votesAndAnswers">Answers</p>
+              </div>
+            </div>
+            <div className="questionBox">
+              <p className="question">Sample Question is?</p>
+              <p className="dateTime">Asked Now</p>
+            </div>
+          </div>
+        </section>
       </div>
     );
   }
