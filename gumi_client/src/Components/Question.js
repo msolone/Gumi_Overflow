@@ -121,7 +121,7 @@ class Question extends Component {
       <div>
         <div className="topBody oneQuestion">
           <p className="allQuestions">{this.state._questions.title}</p>
-          <Link to="./AskQuestion" className="askQuestionButton">
+          <Link to="./AskQuestion/new" className="askQuestionButton">
             Ask Question
           </Link>
         </div>
