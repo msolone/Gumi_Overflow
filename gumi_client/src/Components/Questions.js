@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import moment from 'moment'
 
 class Questions extends Component {
   constructor(props) {
@@ -18,6 +19,10 @@ class Questions extends Component {
           questions: questionsData
         });
       });
+  }
+
+  getDate = (date) => {
+    return moment(date).fromNow()
   }
 
   render() {
@@ -45,7 +50,7 @@ class Questions extends Component {
                 {/* <Link to={{pathname: `/Question/${i}`, state: {questions: this.props.questions}}} key={i}> */}
                   <p className="question">{question.title}</p>
                 </Link>
-                <p className="dateTime">Asked {question.date}</p>
+                <p className="dateTime">Asked {this.getDate(question.date)}</p>
               </div>
             </div>
           );
