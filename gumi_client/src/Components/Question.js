@@ -80,14 +80,39 @@ class Question extends Component {
           title: this.state.title,
           content: this.state.content
         })
-      }
-    )
+      })
       .then(resp => resp.json())
       .then(Data => {
         console.log(Data);
         this.setState({
           _questions: Data
         });
+      });
+  };
+
+  AddUpVoteAnswer = (id) => {
+    console.log(id)
+    fetch(
+      `https://localhost:5001/api/votes/${id}/Answer/UpVotes`,
+      {
+      method: "PATCH"
+    })
+      .then(resp => resp.json())
+      .then(Data => {
+        console.log(Data)       
+      });
+  };
+
+  AddDownVoteAnswer = (id) => {
+    console.log(id)
+    fetch(
+      `https://localhost:5001/api/votes/${id}/Answer/DownVotes`,
+      {
+      method: "PATCH"
+    })
+      .then(resp => resp.json())
+      .then(Data => {
+        console.log(Data)       
       });
   };
 
@@ -116,13 +141,13 @@ class Question extends Component {
 
         {this.state.answers.map((answer, i) => {
           return (
-            <section className="answeredQuestionBox">
+            <section className="answeredQuestionBox" key={answer.id}>
               <div className="votesUpDown">
-                <button className="votesUpButton" >▲</button>
+                <button className="votesUpButton" onClick={() => this.AddUpVoteAnswer(answer.id)} >▲</button>
                 <p>{answer.upVotes - answer.downVotes}</p>
-                <button className="votesUpButton">▼</button>
+                <button className="votesUpButton" onClick={() => this.AddDownVoteAnswer(answer.id)}>▼</button>
               </div>
-              <div>{answer.content}</div>
+              <div>{answer.content}</div> 
               <div className="lines" />
             </section>
           );
