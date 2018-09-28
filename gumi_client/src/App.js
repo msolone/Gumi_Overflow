@@ -18,7 +18,7 @@ class App extends Component {
           <Switch>
             <Route path="/" exact component={Questions} />
             <Route path="/:questionId" exact component={Question} />
-            <Route path="/AskQuestion" exact component={AskQuestion} />
+            <Route path="/AskQuestion/new" exact component={AskQuestion} />
           </Switch>
         </div>
       </Router>

@@ -25,7 +25,7 @@ class Questions extends Component {
       <section>
         <div className="topBody">
           <p className="allQuestions">All Questions</p>
-          <Link to="./AskQuestion" className="askQuestionButton">Ask Question</Link>
+          <Link to="./AskQuestion/new" className="askQuestionButton">Ask Question</Link>
         </div>
         {this.state.questions.map((question, i) => {
           return (
@@ -41,7 +41,7 @@ class Questions extends Component {
                 </div>
               </div>
               <div className="questionBox">
-                <Link to="./Question">
+                <Link to={`./${question.id}`}>
                 {/* <Link to={{pathname: `/Question/${i}`, state: {questions: this.props.questions}}} key={i}> */}
                   <p className="question">{question.title}</p>
                 </Link>
