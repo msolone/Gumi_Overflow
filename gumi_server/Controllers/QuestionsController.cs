@@ -30,6 +30,14 @@ namespace Gumi_Server.Controllers
 
         }//END HttpGet
 
+        // Find a question based on ID
+        [HttpGet("{id}")]
+        public IEnumerable<Question> GetId(int id)
+        {
+            var question = this.db.Questions.Where(w => w.Id == id);
+            return question;
+        }
+
         [HttpPost]
         public Question Post([FromBody] Question Question)
         {
