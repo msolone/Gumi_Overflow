@@ -81,16 +81,14 @@ class Question extends Component {
           <div>{this.state._questions.content}</div>
         </div>
 
-        <div className="answeredQuestionBox">
-          <div className="votesUpDown">
-            <button className="votesUpButton">__upVote</button>
-            <p>
-              {this.state._questions.upVotes - this.state._questions.downVotes}
-            </p>
-            <button>downVote</button>
-          </div>
-          <div>{this.state._questions.content}</div>
-        </div>
+        <div>1 Answer</div>
+        
+        {this.state.answers.map((answer, i) => {
+        return (
+          <div>{answer.content}</div>
+        
+        )})
+        }
 
         <section className="ask_question_page">
           <form
