@@ -69,15 +69,15 @@ class AskQuestion extends Component {
         </form>
         <section className="how_to_format_section">
             <div className="format_title">How to Format</div>
-            <ul>
-                <li>put returns between paragraphs</li>
-                <li>or linebreak add 2 spaces at end</li>
-                <li><span className="italic">_italic_</span> or <span className="bold">**bold**</span></li>
-                <li>indent code by 4 spaces</li>
-                <li>backtick escapes `like _so_`</li>
-                <li> quote by placing > at start of line</li>
-                <li>to make links</li>
-                <li>basic HTML also allowed</li>
+            <ul class="fa-ul">
+                <li><i class="fa-li fa fa-check-square"></i>put returns between paragraphs</li>
+                <li><i class="fa-li fa fa-check-square"></i>or linebreak add 2 spaces at end</li>
+                <li><i class="fa-li fa fa-check-square"></i><span className="italic">_italic_</span> or <span className="bold">**bold**</span></li>
+                <li><i class="fa-li fa fa-check-square"></i>indent code by 4 spaces</li>
+                <li><i class="fa-li fa fa-check-square"></i>backtick escapes `like _so_`</li>
+                <li><i class="fa-li fa fa-check-square"></i>quote by placing > at start of line</li>
+                <li><i class="fa-li fa fa-check-square"></i>to make links</li>
+                <li><i class="fa-li fa fa-check-square"></i>basic HTML also allowed</li>
             </ul>
         </section>
       </section>
