@@ -47,14 +47,7 @@ class Question extends Component {
         this.props.match.params.questionId
       }/Question/UpVotes`,
       {
-        method: "PATCH",
-        headers: {
-          "Content-type": "application/json"
-        },
-        body: JSON.stringify({
-          title: this.state.title,
-          content: this.state.content
-        })
+        method: "PATCH"
       }
     )
       .then(resp => resp.json())
@@ -72,14 +65,7 @@ class Question extends Component {
         this.props.match.params.questionId
       }/Question/DownVotes`,
       {
-        method: "PATCH",
-        headers: {
-          "Content-type": "application/json"
-        },
-        body: JSON.stringify({
-          title: this.state.title,
-          content: this.state.content
-        })
+        method: "PATCH"
       })
       .then(resp => resp.json())
       .then(Data => {
