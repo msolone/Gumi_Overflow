@@ -10,6 +10,7 @@ class AskQuestion extends Component {
   }
 
   handleSubmitQuestion = e => {
+    console.log("first")
     e.preventDefault();
     fetch("https://localhost:5001/api/questions", 
     {
@@ -37,7 +38,7 @@ class AskQuestion extends Component {
   render() {
     return (
       <section className="ask_question_page">
-        <form className="ask_question_form">
+        <form className="ask_question_form" onSubmit={this.handleSubmitQuestion}>
           <div className="ask_question_call_to_action">Ask a Question</div>
           <section className="ask_question_title_section">
             <div className="ask_question_title">Title</div>
@@ -61,7 +62,7 @@ class AskQuestion extends Component {
           </section>
           <button
             className="ask_question_form_submit"
-            onChange={this.handleSubmitQuestion}
+           
           >
             Post Your Question
           </button>
