@@ -42,6 +42,7 @@ class Questions extends Component {
               </div>
               <div className="questionBox">
                 <Link to="./Question">
+                {/* <Link to={{pathname: `/Question/${i}`, state: {questions: this.props.questions}}} key={i}> */}
                   <p className="question">{question.title}</p>
                 </Link>
                 <p className="dateTime">Asked {question.date}</p>
