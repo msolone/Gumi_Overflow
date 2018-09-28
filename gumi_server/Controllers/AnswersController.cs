@@ -33,7 +33,7 @@ namespace Gumi_Server.Controllers
         [HttpGet("{id}")]
         public IEnumerable<Answer> Get(int id)
         {
-            var answer = this.db.Answers.Where(a => a.QuestionId == id);
+            var answer = this.db.Answers.Where(a => a.QuestionId == id).OrderBy(o => o.Date);
             return answer;
 
         }//END HttpGet

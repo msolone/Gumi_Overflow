@@ -7,7 +7,8 @@ class Question extends Component {
     this.state = {
       questionId: "",
       _questions: {},
-      answers: []
+      answers: [],
+      content: ""
     };
   }
 
@@ -66,7 +67,8 @@ class Question extends Component {
       }/Question/DownVotes`,
       {
         method: "PATCH"
-      })
+      }
+    )
       .then(resp => resp.json())
       .then(Data => {
         console.log(Data);
@@ -76,31 +78,50 @@ class Question extends Component {
       });
   };
 
-  AddUpVoteAnswer = (id) => {
-    console.log(id)
-    fetch(
-      `https://localhost:5001/api/votes/${id}/Answer/UpVotes`,
-      {
+  AddUpVoteAnswer = id => {
+    console.log(id);
+    fetch(`https://localhost:5001/api/votes/${id}/Answer/UpVotes`, {
       method: "PATCH"
     })
       .then(resp => resp.json())
       .then(Data => {
-        console.log(Data)       
+        console.log(Data);
       });
   };
 
-  AddDownVoteAnswer = (id) => {
-    console.log(id)
-    fetch(
-      `https://localhost:5001/api/votes/${id}/Answer/DownVotes`,
-      {
+  AddDownVoteAnswer = id => {
+    console.log(id);
+    fetch(`https://localhost:5001/api/votes/${id}/Answer/DownVotes`, {
       method: "PATCH"
     })
       .then(resp => resp.json())
       .then(Data => {
-        console.log(Data)       
+        console.log(Data);
       });
   };
+
+  handleSubmitAnswer = () => {
+    fetch("https://localhost:5001/api/answers", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json"
+      },
+      body: JSON.stringify({
+        content: this.state.content,
+        questionId: this.state.questionId
+      })
+    })
+      .then(resp => resp.json())
+      .then(Data => {
+        console.log(Data);
+      });
+  };
+
+  handleChange = e => {
+    this.setState({
+      [e.target.name]: e.target.value
+    });
+  }
 
   render() {
     return (
@@ -113,27 +134,42 @@ class Question extends Component {
         </div>
         <div className="answeredQuestionBox">
           <div className="votesUpDown">
-            <button className="votesUpButton" onClick={this.addAUpVote}>▲</button>
+            <button className="votesUpButton" onClick={this.addAUpVote}>
+              ▲
+            </button>
             <p>
               {this.state._questions.upVotes - this.state._questions.downVotes}
             </p>
-            <button className="votesUpButton" onClick={this.addADownVote}>▼</button>
+            <button className="votesUpButton" onClick={this.addADownVote}>
+              ▼
+            </button>
           </div>
           <div>{this.state._questions.content}</div>
         </div>
 
-        <div className="number_of_answers">{this.state.answers.length} Answers</div>
-  
+        <div className="number_of_answers">
+          {this.state.answers.length} Answers
+        </div>
 
         {this.state.answers.map((answer, i) => {
           return (
             <section className="answeredQuestionBox" key={answer.id}>
               <div className="votesUpDown">
-                <button className="votesUpButton" onClick={() => this.AddUpVoteAnswer(answer.id)} >▲</button>
+                <button
+                  className="votesUpButton"
+                  onClick={() => this.AddUpVoteAnswer(answer.id)}
+                >
+                  ▲
+                </button>
                 <p>{answer.upVotes - answer.downVotes}</p>
-                <button className="votesUpButton" onClick={() => this.AddDownVoteAnswer(answer.id)}>▼</button>
+                <button
+                  className="votesUpButton"
+                  onClick={() => this.AddDownVoteAnswer(answer.id)}
+                >
+                  ▼
+                </button>
               </div>
-              <div>{answer.content}</div> 
+              <div>{answer.content}</div>
               <div className="lines" />
             </section>
           );
@@ -142,7 +178,7 @@ class Question extends Component {
         <section className="ask_question_page">
           <form
             className="answerAQuestionForm"
-            onSubmit={this.handleSubmitQuestion}
+            onSubmit={this.handleSubmitAnswer}
           >
             <div className="ask_question_call_to_action">Your Answer</div>
             <section className="answerAQuestionBoxSection">
