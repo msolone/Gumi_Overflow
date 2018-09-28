@@ -29,6 +29,26 @@ class Question extends Component {
     });
   }
 
+  addAUpVote = () =>{
+    fetch(`https://localhost:5001/api/votes/${
+      this.props.match.params.questionId
+    }/Question/UpVotes`,
+    {
+      method: "PATCH",
+      headers: {
+        "Content-type": "application/json"
+    },
+      body: JSON.stringify({
+        title: this.state.title,
+        content: this.state.content
+      })
+    })
+      .then(resp => resp.json())
+      .then(Data => {
+        console.log(Data);
+    });
+  };
+
   render() {
     return (
       <div>
@@ -40,7 +60,7 @@ class Question extends Component {
         </div>
         <div className="answeredQuestionBox">
           <div className="votesUpDown">
-            <button className="votesUpButton">__upVote</button>
+            <button className="votesUpButton" onClick={this.addAUpVote}>__upVote</button>
             <p>
               {this.state._questions.upVotes - this.state._questions.downVotes}
             </p>
