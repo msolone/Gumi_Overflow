@@ -42,6 +42,7 @@ namespace Gumi_Server.Controllers
                                     Text = s.Title,
                                     Type = "question"
                                 });
+          
         
         // Searches the Answers Table for what ever is typed after api/search/...
             var answersResults = this.db 
