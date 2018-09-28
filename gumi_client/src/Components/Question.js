@@ -102,27 +102,25 @@ class Question extends Component {
         </div>
         <div className="answeredQuestionBox">
           <div className="votesUpDown">
-            <button className="votesUpButton" onClick={this.addAUpVote}>
-              __upVote
-            </button>
+            <button className="votesUpButton" onClick={this.addAUpVote}>▲</button>
             <p>
               {this.state._questions.upVotes - this.state._questions.downVotes}
             </p>
-            <button onClick={this.addADownVote}>downVote</button>
+            <button className="votesUpButton" onClick={this.addADownVote}>▼</button>
           </div>
           <div>{this.state._questions.content}</div>
         </div>
 
-        <div className="number_of_answers">1 Answer</div>
+        <div className="number_of_answers">{this.state.answers.length} Answers</div>
   
 
         {this.state.answers.map((answer, i) => {
           return (
             <section className="answeredQuestionBox">
               <div className="votesUpDown">
-                <button className="votesUpButton">__upVote</button>
+                <button className="votesUpButton" >▲</button>
                 <p>{answer.upVotes - answer.downVotes}</p>
-                <button>downVote</button>
+                <button className="votesUpButton">▼</button>
               </div>
               <div>{answer.content}</div>
               <div className="lines" />
@@ -137,7 +135,7 @@ class Question extends Component {
           >
             <div className="ask_question_call_to_action">Your Answer</div>
             <section className="answerAQuestionBoxSection">
-              <input
+              <textarea
                 name="content"
                 className="answerAQuestionBox"
                 type="text"

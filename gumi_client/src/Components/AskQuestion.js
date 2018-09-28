@@ -52,7 +52,7 @@ class AskQuestion extends Component {
           </section>
           <section className="ask_question_body_section">
             <div className="ask_question_body">Body</div>
-            <input
+            <textarea
               name="content"
               className="ask_question_body_input"
               type="text"

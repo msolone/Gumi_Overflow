@@ -119,10 +119,15 @@ header input {
   margin: 0em 1em 0em 1em;
 }
 
+.votesUpButton {
+  font-size: 1.5em;
+}
+
 .votesUpDown p {
   padding: .5em;
   text-align: center;
   margin-right: 3em;
+  
 }
 .answerAQuestionForm {
   width: 80%;
