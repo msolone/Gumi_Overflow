@@ -6,7 +6,7 @@ class Question extends Component {
     super(props);
     this.state = {
       questionId: "",
-      _questions: []
+      _questions: {}
     };
   }
 
@@ -17,7 +17,7 @@ class Question extends Component {
         console.log(questionsData);
         console.log(questionsData[0].title)
         this.setState({
-          questions: questionsData
+          _questions: questionsData[0]
         });
       });
     this.setState({
@@ -28,12 +28,11 @@ class Question extends Component {
   // let _question = this.props.location.state.questions
 
   render() {
-    let questions = this.props.questions;
     return (
       <div>
         <div className="topBody oneQuestion">
           <p className="allQuestions">
-          {this.state._questions[0].title}
+          {this.state._questions.title}
           </p>
           
           <Link to="./AskQuestion" className="askQuestionButton">
