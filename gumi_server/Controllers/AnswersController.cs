@@ -21,10 +21,11 @@ namespace Gumi_Server.Controllers
         }
 
         // Gathers all Answers into an Array
-        [HttpGet]
-        public IEnumerable<Answer> Get()
+        [HttpGet("{id}")]
+        public IEnumerable<Answer> Get(int id)
         {
-            return this.db.Answers;
+            var answer = this.db.Answers.Where(a => a.QuestionId == id);
+            return answer;
 
         }//END HttpGet
 

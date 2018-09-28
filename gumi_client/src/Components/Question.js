@@ -6,7 +6,8 @@ class Question extends Component {
     super(props);
     this.state = {
       questionId: "",
-      _questions: {}
+      _questions: {},
+      answers: []
     };
   }
 
@@ -19,15 +20,27 @@ class Question extends Component {
       .then(resp => resp.json())
       .then(questionsData => {
         console.log(questionsData);
-        console.log(questionsData[0].title);
         this.setState({
           _questions: questionsData[0]
         });
       });
+
     this.setState({
       questionId: this.props.match.params.questionId
     });
+
+    fetch(
+      `https://localhost:5001/api/answers/${this.props.match.params.questionId}`
+    )
+      .then(resp => resp.json())
+      .then(answersData => {
+        console.log(answersData);
+        this.setState({
+          answers: answersData
+        });
+      });
   }
+
   // let questionId = this.props.match.params.questions.Id
   // let _question = this.props.location.state.questions
 
@@ -50,6 +63,18 @@ class Question extends Component {
           </div>
           <div>{this.state._questions.content}</div>
         </div>
+
+        <div className="answeredQuestionBox">
+          <div className="votesUpDown">
+            <button className="votesUpButton">__upVote</button>
+            <p>
+              {this.state._questions.upVotes - this.state._questions.downVotes}
+            </p>
+            <button>downVote</button>
+          </div>
+          <div>{this.state._questions.content}</div>
+        </div>
+
         <section className="ask_question_page">
           <form
             className="answerAQuestionForm"
@@ -65,8 +90,8 @@ class Question extends Component {
                 onChange={this.handleChange}
               />
             </section>
-            <div className="lines"></div>
-            <div className="lines"></div>
+            <div className="lines" />
+            <div className="lines" />
             <button className="ask_question_form_submit">
               Post Your Answer
             </button>
