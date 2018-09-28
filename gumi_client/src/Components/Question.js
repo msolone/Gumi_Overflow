@@ -41,50 +41,54 @@ class Question extends Component {
       });
   }
 
-  addAUpVote = () =>{
-    fetch(`https://localhost:5001/api/votes/${
-      this.props.match.params.questionId
-    }/Question/UpVotes`,
-    {
-      method: "PATCH",
-      headers: {
-        "Content-type": "application/json"
-    },
-      body: JSON.stringify({
-        title: this.state.title,
-        content: this.state.content
-      })
-    })
+  addAUpVote = () => {
+    fetch(
+      `https://localhost:5001/api/votes/${
+        this.props.match.params.questionId
+      }/Question/UpVotes`,
+      {
+        method: "PATCH",
+        headers: {
+          "Content-type": "application/json"
+        },
+        body: JSON.stringify({
+          title: this.state.title,
+          content: this.state.content
+        })
+      }
+    )
       .then(resp => resp.json())
       .then(Data => {
         console.log(Data);
         this.setState({
           _questions: Data
-        })
-    });
+        });
+      });
   };
 
-  addADownVote = () =>{
-    fetch(`https://localhost:5001/api/votes/${
-      this.props.match.params.questionId
-    }/Question/DownVotes`,
-    {
-      method: "PATCH",
-      headers: {
-        "Content-type": "application/json"
-    },
-      body: JSON.stringify({
-        title: this.state.title,
-        content: this.state.content
-      })
-    })
+  addADownVote = () => {
+    fetch(
+      `https://localhost:5001/api/votes/${
+        this.props.match.params.questionId
+      }/Question/DownVotes`,
+      {
+        method: "PATCH",
+        headers: {
+          "Content-type": "application/json"
+        },
+        body: JSON.stringify({
+          title: this.state.title,
+          content: this.state.content
+        })
+      }
+    )
       .then(resp => resp.json())
       .then(Data => {
         console.log(Data);
         this.setState({
           _questions: Data
-        })
-    });
+        });
+      });
   };
 
   render() {
@@ -98,7 +102,9 @@ class Question extends Component {
         </div>
         <div className="answeredQuestionBox">
           <div className="votesUpDown">
-            <button className="votesUpButton" onClick={this.addAUpVote}>__upVote</button>
+            <button className="votesUpButton" onClick={this.addAUpVote}>
+              __upVote
+            </button>
             <p>
               {this.state._questions.upVotes - this.state._questions.downVotes}
             </p>
@@ -107,14 +113,22 @@ class Question extends Component {
           <div>{this.state._questions.content}</div>
         </div>
 
-        <div>1 Answer</div>
-        
+        <div className="number_of_answers">1 Answer</div>
+  
+
         {this.state.answers.map((answer, i) => {
-        return (
-          <div>{answer.content}</div>
-        
-        )})
-        }
+          return (
+            <section className="answeredQuestionBox">
+              <div className="votesUpDown">
+                <button className="votesUpButton">__upVote</button>
+                <p>{answer.upVotes - answer.downVotes}</p>
+                <button>downVote</button>
+              </div>
+              <div>{answer.content}</div>
+              <div className="lines" />
+            </section>
+          );
+        })}
 
         <section className="ask_question_page">
           <form
