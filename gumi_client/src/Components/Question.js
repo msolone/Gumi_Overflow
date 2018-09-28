@@ -58,6 +58,32 @@ class Question extends Component {
       .then(resp => resp.json())
       .then(Data => {
         console.log(Data);
+        this.setState({
+          _questions: Data
+        })
+    });
+  };
+
+  addADownVote = () =>{
+    fetch(`https://localhost:5001/api/votes/${
+      this.props.match.params.questionId
+    }/Question/DownVotes`,
+    {
+      method: "PATCH",
+      headers: {
+        "Content-type": "application/json"
+    },
+      body: JSON.stringify({
+        title: this.state.title,
+        content: this.state.content
+      })
+    })
+      .then(resp => resp.json())
+      .then(Data => {
+        console.log(Data);
+        this.setState({
+          _questions: Data
+        })
     });
   };
 
@@ -76,7 +102,7 @@ class Question extends Component {
             <p>
               {this.state._questions.upVotes - this.state._questions.downVotes}
             </p>
-            <button>downVote</button>
+            <button onClick={this.addADownVote}>downVote</button>
           </div>
           <div>{this.state._questions.content}</div>
         </div>
