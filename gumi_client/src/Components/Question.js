@@ -28,8 +28,6 @@ class Question extends Component {
       questionId: this.props.match.params.questionId
     });
   }
-  // let questionId = this.props.match.params.questions.Id
-  // let _question = this.props.location.state.questions
 
   render() {
     return (

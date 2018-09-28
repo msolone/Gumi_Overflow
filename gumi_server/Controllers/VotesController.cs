@@ -20,10 +20,40 @@ namespace Gumi_Server.Controllers
             this.db = _db;
         }
 
+        // Increase the UpVotes on a Answer in the Database
+        [HttpPatch("{id}/Question/UpVotes")]
+        public Question QuestionUpVotes(int id)
+        {
+            // Find the Answer in the Database with matching id
+            var question = this.db.Questions.FirstOrDefault(a => a.Id == id);
+            // Increase UpVotes by 1
+            question.UpVotes++;
+            // Saves Changes to DB
+            this.db.SaveChanges();
+            // Returns the New Answer
+            return question;
+
+        } // END HttpPatch
+
+                // Increase the DownVotes on a Answer in the Database
+        [HttpPatch("{id}/Question/DownVotes")]
+        public Question QuestionDownVotes(int id)
+        {
+            // Find the Answer in the Database with matching id
+            var question = this.db.Questions.FirstOrDefault(a => a.Id == id);
+            // Increase DownVotes by 1
+            question.DownVotes++;
+            // Saves Changes to DB
+            this.db.SaveChanges();
+            // Returns the New Answer
+            return question;
+
+        } // END HttpPatch
+
 
         // Increase the UpVotes on a Answer in the Database
-        [HttpPatch("{id}/UpVotes")]
-        public Answer UpVotes(int id)
+        [HttpPatch("{id}/Answer/UpVotes")]
+        public Answer AnswerUpVotes(int id)
         {
             // Find the Answer in the Database with matching id
             var answer = this.db.Answers.FirstOrDefault(a => a.Id == id);
@@ -37,8 +67,8 @@ namespace Gumi_Server.Controllers
         } // END HttpPatch
 
                 // Increase the DownVotes on a Answer in the Database
-        [HttpPatch("{id}/DownVotes")]
-        public Answer DownVotes(int id)
+        [HttpPatch("{id}/Answer/DownVotes")]
+        public Answer AnswerDownVotes(int id)
         {
             // Find the Answer in the Database with matching id
             var answer = this.db.Answers.FirstOrDefault(a => a.Id == id);
