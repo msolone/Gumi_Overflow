@@ -31,10 +31,7 @@ class Question extends Component {
     return (
       <div>
         <div className="topBody oneQuestion">
-          <p className="allQuestions">
-          {this.state._questions.title}
-          </p>
-          
+          <p className="allQuestions">{this.state._questions.title}</p>
           <Link to="./AskQuestion" className="askQuestionButton">
             Ask Question
           </Link>
