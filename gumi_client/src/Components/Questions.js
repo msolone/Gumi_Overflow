@@ -6,7 +6,8 @@ class Questions extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      questions: []
+      questions: [],
+      answers: [],
     };
   }
 
@@ -17,6 +18,15 @@ class Questions extends Component {
         console.log(questionsData);
         this.setState({
           questions: questionsData
+        });
+      });
+
+      fetch("https://localhost:5001/api/answers")
+      .then(resp => resp.json())
+      .then(answersData => {
+        console.log(answersData);
+        this.setState({
+          answers: answersData
         });
       });
   }
@@ -41,13 +51,12 @@ class Questions extends Component {
                   <p className="votesAndAnswers">Votes</p>
                 </div>
                 <div className="answers">
-                  <p>0</p>
+                  <p>{this.state.answers.length}</p>
                   <p className="votesAndAnswers">Answers</p>
                 </div>
               </div>
               <div className="questionBox">
                 <Link to={`./${question.id}`}>
-                {/* <Link to={{pathname: `/Question/${i}`, state: {questions: this.props.questions}}} key={i}> */}
                   <p className="question">{question.title}</p>
                 </Link>
                 <p className="dateTime">Asked {this.getDate(question.date)}</p>
