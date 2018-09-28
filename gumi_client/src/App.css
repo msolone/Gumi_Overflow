@@ -113,7 +113,8 @@ header input {
 
 .answeredQuestionBox {
   display: flex;
-  border: 1px solid black;
+  border-top: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
   padding: 1em;
   margin: 0em 1em 0em 1em;
 }
@@ -123,7 +124,21 @@ header input {
   text-align: center;
   margin-right: 3em;
 }
+.answerAQuestionForm {
+  width: 80%;
+  align-content: center;
+}
 
-votesUpButton {
-  
+.answerAQuestionBoxSection {
+
+}
+
+.answerAQuestionBox {
+  width: 100%;
+  height: 10em; 
+}
+
+.lines {
+  border-bottom: 1px solid lightgray;
+  margin: 2em 0em 2em 0em;
 }

@@ -11,11 +11,15 @@ class Question extends Component {
   }
 
   componentDidMount() {
-    fetch(`https://localhost:5001/api/questions/${this.props.match.params.questionId}`)
+    fetch(
+      `https://localhost:5001/api/questions/${
+        this.props.match.params.questionId
+      }`
+    )
       .then(resp => resp.json())
       .then(questionsData => {
         console.log(questionsData);
-        console.log(questionsData[0].title)
+        console.log(questionsData[0].title);
         this.setState({
           _questions: questionsData[0]
         });
@@ -39,15 +43,35 @@ class Question extends Component {
         <div className="answeredQuestionBox">
           <div className="votesUpDown">
             <button className="votesUpButton">__upVote</button>
-            <p>1576</p>
+            <p>
+              {this.state._questions.upVotes - this.state._questions.downVotes}
+            </p>
             <button>downVote</button>
           </div>
-          <div>
-            V is the last one. He keeps practicing during the SDG Bootcamp and
-            is soon to open his own company employing the best minds in the
-            industry, like...
-          </div>
+          <div>{this.state._questions.content}</div>
         </div>
+        <section className="ask_question_page">
+          <form
+            className="answerAQuestionForm"
+            onSubmit={this.handleSubmitQuestion}
+          >
+            <div className="ask_question_call_to_action">Your Answer</div>
+            <section className="answerAQuestionBoxSection">
+              <input
+                name="content"
+                className="answerAQuestionBox"
+                type="text"
+                placeholder=""
+                onChange={this.handleChange}
+              />
+            </section>
+            <div className="lines"></div>
+            <div className="lines"></div>
+            <button className="ask_question_form_submit">
+              Post Your Answer
+            </button>
+          </form>
+        </section>
       </div>
     );
   }
