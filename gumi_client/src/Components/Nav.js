@@ -11,18 +11,18 @@ class Nav extends Component {
   }
   
 
-  searchQuestions = () => {
-    fetch(`https://localhost:5001/api/search?q=${
-      this.state.searchItem
-    }`)
-      .then(resp => resp.json())
-      .then(questionsData => {
-        console.log(questionsData);
-        this.setState({
-          questions: questionsData
-        });
-      });
-  }
+  // searchQuestions = () => {
+  //   fetch(`https://localhost:5001/api/search?q=${
+  //     this.state.searchItem
+  //   }`)
+  //     .then(resp => resp.json())
+  //     .then(questionsData => {
+  //       console.log(questionsData);
+  //       this.setState({
+  //         questions: questionsData
+  //       });
+  //     });
+  // }
 
   handleChange = e => {
     this.setState({
@@ -36,7 +36,7 @@ class Nav extends Component {
         <div className="search">
           <Link to="/"><img src="../Assets/StackOverflow_Logo2.png" alt="Stack Overflow" /></Link>
           <input type="text" placeholder="Search..." onChange={this.handleChange} name="searchItem"/>
-          <Link to="/search/question/fake" class="search_button" onClick={this.searchQuestions}>Search</Link>
+          <Link to={`/search/question/${this.state.searchItem}`} className="search_button" onClick={this.searchQuestions}>Search</Link>
         </div>
         <h2>Menu</h2>
       </header>
