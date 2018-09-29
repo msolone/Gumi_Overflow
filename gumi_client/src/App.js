@@ -7,6 +7,7 @@ import Nav from "./Components/Nav";
 import Questions from "./Components/Questions";
 import Question from "./Components/Question";
 import AskQuestion from "./Components/AskQuestion";
+import SearchList from './Components/SearchList';
 
 class App extends Component {
   
@@ -17,6 +18,7 @@ class App extends Component {
           <Nav />
           <Switch>
             <Route path="/" exact component={Questions} />
+            <Route path="/search/question/:searchTerms" exact component={SearchList} />
             <Route path="/:questionId" exact component={Question} />
             <Route path="/AskQuestion/new" exact component={AskQuestion} />
           </Switch>

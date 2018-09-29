@@ -153,3 +153,15 @@ header input {
   margin-left: 5%;
   padding: 0.5em;
 }
+
+.search_button {
+  
+  width: 8%;
+  text-align: center;
+  background: #0E7EFF;
+  color: white;
+  padding: 1em;
+  border-radius: 5px;
+  text-decoration: none;
+  
+}

@@ -36,7 +36,7 @@ class Nav extends Component {
         <div className="search">
           <Link to="/"><img src="../Assets/StackOverflow_Logo2.png" alt="Stack Overflow" /></Link>
           <input type="text" placeholder="Search..." onChange={this.handleChange} name="searchItem"/>
-          <button onClick={this.searchQuestions}>This is a ugly button</button>
+          <Link to="/search/question/fake" class="search_button" onClick={this.searchQuestions}>Search</Link>
         </div>
         <h2>Menu</h2>
       </header>
